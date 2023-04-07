@@ -15,15 +15,15 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [LoginFragment.newInstance] factory method to
+ * Use the [DiceFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class LoginFragment : Fragment(R.layout.fragment_login) {
+class DiceFragment : Fragment(R.layout.fragment_dice) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val btnLogin = requireView().findViewById<Button>(R.id.loginButton)
-        btnLogin.setOnClickListener{
-            findNavController().navigate(R.id.action_loginFragment_to_diceFragment)
+        val logoutButton = requireView().findViewById<Button>(R.id.logout_button)
+        logoutButton.setOnClickListener{
+            findNavController().popBackStack()
         }
     }
 }

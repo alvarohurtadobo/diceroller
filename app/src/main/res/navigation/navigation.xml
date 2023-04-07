@@ -18,5 +18,14 @@
         android:id="@+id/loginFragment"
         android:name="com.arhm.diceroller.LoginFragment"
         android:label="fragment_login"
-        tools:layout="@layout/fragment_login" />
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_diceFragment"
+            app:destination="@id/diceFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/diceFragment"
+        android:name="com.arhm.diceroller.DiceFragment"
+        android:label="fragment_dice"
+        tools:layout="@layout/fragment_dice" />
 </navigation>

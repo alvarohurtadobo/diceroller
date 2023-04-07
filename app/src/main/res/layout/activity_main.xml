@@ -1,44 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+<!--<layout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto">-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-    <LinearLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:layout_gravity="center_vertical">
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/myNavHostFramework"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        tools:context=".MainActivity"
-        android:layout_gravity="center_vertical">
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/myNavHostFramework"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:name="androidx.navigation.fragment.NavHostFragment"
-            app:defaultNavHost="true"
-            app:navGraph="@navigation/navigation"></androidx.fragment.app.FragmentContainerView>
+        android:layout_height="match_parent"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/navigation"></androidx.fragment.app.FragmentContainerView>
 
-        <TextView
-            android:id="@+id/result_text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="30sp"
-            android:text="Hello Alvaro"
-            android:layout_gravity="center">
-        </TextView>
-        <ImageView
-            android:id="@+id/dice_image"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            app:srcCompat="@drawable/empty_dice"
-            tools:src="@drawable/dice_1"
-            tools:ignore="MissingPrefix"></ImageView>
-        <Button
-            android:id="@+id/roll_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/roll_dice"
-            android:layout_gravity="center">
-        </Button>
-
-    </LinearLayout>
-</layout>
+</LinearLayout>
+<!--</layout>-->
