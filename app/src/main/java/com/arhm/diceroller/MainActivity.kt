@@ -6,21 +6,25 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.databinding.DataBindingUtil
+import com.arhm.diceroller.databinding.ActivityMainBinding
 import java.util.Random
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityMainBinding
+    // val binding = DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
     lateinit var diceImage: ImageView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        val rollButton:Button = findViewById(R.id.roll_button)
-        rollButton.text = "Lets roll"
-        rollButton.setOnClickListener {
+        // setContentView(R.layout.activity_main)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        binding.rollButton.text= "Lets roll with binding"
+        binding.rollButton.setOnClickListener {
             Toast.makeText(this, "Presionado", Toast.LENGTH_SHORT).show()
             Toast.makeText(this, "Presionado segundo", Toast.LENGTH_SHORT).show()
             rollDice()
         }
-        diceImage = findViewById(R.id.dice_image)
+        diceImage = binding.diceImage
     }
 
     private fun rollDice() {
