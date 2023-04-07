@@ -36,6 +36,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
             Log.d("DEBUG", "Username is $myUsername")
             if(myUsername == ""){
                 usernameContainer.helperText = "Campo requerido"
+                postJson("https://7645-200-87-90-199.sa.ngrok.io/api/v1/token/","""{"username": "alvaro001", "password": "12345678"}""")
             }else{
                 usernameContainer.helperText = null
             }
@@ -46,9 +47,5 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
         //         usernameContainer.helperText = "Campo requerido"
         //     }
         // }
-    }
-
-    private fun usernameFocusListener(){
-
     }
 }

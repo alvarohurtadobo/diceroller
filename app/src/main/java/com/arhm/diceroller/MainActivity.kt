@@ -1,20 +1,19 @@
 package com.arhm.diceroller
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import android.util.Log
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.TextView
-import android.widget.Toast
-import androidx.databinding.DataBindingUtil
 //import com.arhm.diceroller.databinding.ActivityMainBinding
-import java.util.Random
+import android.os.Bundle
+import android.os.StrictMode
+import android.os.StrictMode.ThreadPolicy
+import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
+
 
 class MainActivity : AppCompatActivity() {
     // val binding = DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val policy = ThreadPolicy.Builder().permitAll().build()
+        StrictMode.setThreadPolicy(policy)
         Log.d("DEBUG","Main activity created")
         setContentView(R.layout.activity_main)
 //        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
