@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.os.StrictMode
 import android.os.StrictMode.ThreadPolicy
 import android.util.Log
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
 
@@ -16,6 +17,7 @@ class MainActivity : AppCompatActivity() {
         StrictMode.setThreadPolicy(policy)
         Log.d("DEBUG","Main activity created")
         setContentView(R.layout.activity_main)
+//        val resultText : TextView = findViewById(R.id.result_text_view)
 //        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 //        binding.rollButton.text= "Lets roll with binding"
 //        binding.rollButton.setOnClickListener {
